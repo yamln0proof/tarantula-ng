@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package tarantula.v1;
+
+service Crawler {
+  rpc Crawl(CrawlRequest) returns (CrawlResponse);
+}
+
+message CrawlRequest {
+  string url = 1;
+}
+
+message CrawlResponse {
+  repeated string discovered_urls = 1;
+}
